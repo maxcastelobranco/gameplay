@@ -18,11 +18,11 @@
 - [Shopify Restyle](https://github.com/Shopify/restyle)
 - [React Native Bottom Sheet](https://github.com/gorhom/react-native-bottom-sheet)
 
-### Discord login
+## Discord login
 ![DiscordLogin](.github/discord-login.gif)
 
-### Scheduled games
+## Scheduled games
 ![ScheduledGames](.github/scheduled-games.gif)
 
-### Scheduled a game
+## Scheduled a game
 ![ScheduleGame](.github/schedule-game.gif)
