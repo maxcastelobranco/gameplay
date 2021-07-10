@@ -53,7 +53,7 @@ const Login: React.FC<AppNavigationProps<"Login">> = ({ navigation }) => {
         Connect and organize your gaming
       </Text>
       <Text {...descriptionStyles}>
-        Create groups to play your {"/n"} favorite games with friends
+        Create groups to play your favorite games with friends
       </Text>
       <Button
         title="Login with Discord"
