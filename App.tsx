@@ -1,21 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import "react-native-gesture-handler";
+import React from "react";
+import { ThemeProvider } from "@shopify/restyle";
+import { StatusBar } from "expo-status-bar";
+import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
+
+import LoadAssets from "./src/components/LoadAssets";
+import theme from "./src/theme";
+import { fonts } from "./assets/fonts";
+import Background from "./src/components/Background";
+import AppStackNavigator from "./src/routes";
+import AuthProvider from "./src/context/auth";
 
 export default function App() {
+  const assets = [require("./assets/LoginIllustration.png")];
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeProvider {...{ theme }}>
+      <BottomSheetModalProvider>
+        <AuthProvider>
+          <LoadAssets {...{ fonts, assets }}>
+            <Background>
+              <StatusBar style="light" hidden />
+              <AppStackNavigator />
+            </Background>
+          </LoadAssets>
+        </AuthProvider>
+      </BottomSheetModalProvider>
+    </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
